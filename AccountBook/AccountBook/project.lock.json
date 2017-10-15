@@ -22006,12 +22006,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\APP\\AccountBook\\AccountBook\\AccountBook\\AccountBook.csproj",
+      "projectUniqueName": "C:\\APP\\Account-Book-Pro\\AccountBook\\AccountBook\\AccountBook.csproj",
       "projectName": "AccountBook",
-      "projectPath": "C:\\APP\\AccountBook\\AccountBook\\AccountBook\\AccountBook.csproj",
-      "projectJsonPath": "C:\\APP\\AccountBook\\AccountBook\\AccountBook\\project.json",
+      "projectPath": "C:\\APP\\Account-Book-Pro\\AccountBook\\AccountBook\\AccountBook.csproj",
+      "projectJsonPath": "C:\\APP\\Account-Book-Pro\\AccountBook\\AccountBook\\project.json",
       "packagesPath": "C:\\Users\\kyle\\.nuget\\packages\\",
-      "outputPath": "C:\\APP\\AccountBook\\AccountBook\\AccountBook\\obj\\",
+      "outputPath": "C:\\APP\\Account-Book-Pro\\AccountBook\\AccountBook\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\kyle\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22023,10 +22023,7 @@
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "[5.2.3, )"
-      }
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
     },
     "frameworks": {
       "uap10.0.14393": {}

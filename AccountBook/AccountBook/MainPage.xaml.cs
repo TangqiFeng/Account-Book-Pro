@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountBook.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,100 @@ namespace AccountBook
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        // create list for manu
+        private List<NavMenuItem> navMenuPrimaryItem = new List<NavMenuItem>(
+            new[]
+            {
+                new NavMenuItem()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Icon = "\xE10F",
+                    Label = "Page 1",
+                    Selected = Visibility.Visible,
+                    DestPage = typeof(Page1)
+                },
+
+                new NavMenuItem()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Icon = "\xE11A",
+                    Label = "Page 2",
+                    Selected = Visibility.Collapsed,
+                    DestPage = typeof(Page1)
+                },
+
+                new NavMenuItem()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Icon = "\xE121",
+                    Label = "Page 3",
+                    Selected = Visibility.Collapsed,
+                    DestPage = typeof(Page1)
+                },
+
+                new NavMenuItem()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Icon = "\xE122",
+                    Label = "Page 4",
+                    Selected = Visibility.Collapsed,
+                    DestPage = typeof(Page1)
+                }
+
+            });
+
+        private List<NavMenuItem> navMenuSecondaryItem = new List<NavMenuItem>(
+            new[]
+            {
+                new NavMenuItem()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Icon = "\xE713",
+                    Label = "Setting",
+                    Selected = Visibility.Collapsed,
+                    DestPage = typeof(Page1)
+                }
+            });
+
         public MainPage()
         {
             this.InitializeComponent();
+            // bind navigation manu 
+            NavMenuPrimaryListView.ItemsSource = navMenuPrimaryItem;
+            NavMenuSecondaryListView.ItemsSource = navMenuSecondaryItem;
+            // SplitView
+            PaneOpenButton.Click += (sender, args) =>
+            {
+                RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
+            };
+            // navigation event
+            NavMenuPrimaryListView.ItemClick += NavMenuListView_ItemClick;
+            NavMenuSecondaryListView.ItemClick += NavMenuListView_ItemClick;
+            // default page
+            RootFrame.SourcePageType = typeof(Page1);
+        }
+
+        private void NavMenuListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // hide manu
+            foreach (var np in navMenuPrimaryItem)
+            {
+                np.Selected = Visibility.Collapsed;
+            }
+            foreach (var ns in navMenuSecondaryItem)
+            {
+                ns.Selected = Visibility.Collapsed;
+            }
+
+            NavMenuItem item = e.ClickedItem as NavMenuItem;
+            // display manu
+            item.Selected = Visibility.Visible;
+            if (item.DestPage != null)
+            {
+                RootFrame.Navigate(item.DestPage);
+            }
+
+            RootSplitView.IsPaneOpen = false;
         }
     }
 }
