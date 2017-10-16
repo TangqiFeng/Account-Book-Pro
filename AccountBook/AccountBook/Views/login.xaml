@@ -19,13 +19,17 @@
                         RelativePanel.AlignHorizontalCenterWithPanel="True">
                 <Image Source="/Assets/icon.png" Height="120" Width="120" Margin="0,80,0,0" />
             </StackPanel>
+            <SymbolIcon x:Name="iconMail" Symbol="Mail" RelativePanel.Below="icon"
+                        RelativePanel.AlignLeftWith="icon"/>
             <TextBlock x:Name="tbUsername" Text="Email" RelativePanel.Below="icon"
-                       RelativePanel.AlignLeftWith="icon"/>
+                       RelativePanel.RightOf="iconMail" Margin="5,0,0,0"/>
             <TextBox x:Name="txtUsername" RelativePanel.Below="tbUsername"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                        Width="200" Margin="0,5,0,5"/>
+            <SymbolIcon x:Name="iconPsd" Symbol="Permissions" RelativePanel.Below="txtUsername"
+                        RelativePanel.AlignLeftWith="icon"/>
             <TextBlock x:Name="tbPassword" Text="Password" RelativePanel.Below="txtUsername" 
-                       RelativePanel.AlignLeftWith="icon"/>
+                       RelativePanel.RightOf="iconPsd" Margin="5,0,0,0"/>
             <TextBox x:Name="txtPassword" RelativePanel.Below="tbPassword" 
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                        Width="200" Margin="0,5,0,5"/>
