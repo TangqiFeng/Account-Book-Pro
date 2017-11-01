@@ -51,7 +51,7 @@ namespace AccountBook
                     Icon = "\xE11A",
                     Label = "Search",
                     Selected = Visibility.Collapsed,
-                    DestPage = typeof(Page1)
+                    DestPage = typeof(search)
                 }
 
             });
