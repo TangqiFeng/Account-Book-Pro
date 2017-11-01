@@ -14,71 +14,82 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="ADD ITEM" FontSize="25" FontStyle="Italic"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="ADD ITEM" FontSize="25" FontStyle="Italic"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <StackPanel x:Name="Date" Grid.Row="1" HorizontalAlignment="Center"
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel x:Name="Date" Grid.Row="0" HorizontalAlignment="Center"
                     VerticalAlignment="Center" Orientation="Horizontal">
-            <TextBlock Text="date :" FontSize="18" Foreground="Yellow" VerticalAlignment="Center"
+                <TextBlock Text="date :" FontSize="18" Foreground="Yellow" VerticalAlignment="Center"
                        FontFamily="Times New Roman" FontStyle="Italic" />
-            <CalendarDatePicker x:Name="calendarDatePicker" Margin="30,0,30,0" Width="130"
+                <CalendarDatePicker x:Name="calendarDatePicker" Margin="30,0,30,0" Width="130"
                                 VerticalAlignment="Center"/>
-        </StackPanel>
-
-        <StackPanel x:Name="type" Grid.Row="2" Orientation="Horizontal"  Margin="0,10,0,0"
-                     HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="type :" FontSize="18" Foreground="Yellow" 
-                       FontFamily="Times New Roman" FontStyle="Italic" />
-            <StackPanel x:Name="spChooseType"  Margin="30,0,25,0">
-                <RadioButton x:Name="radPlus" Content="income ( + )" Tag="+" Checked="radPlus_Checked" IsChecked="True"/>
-                <RadioButton x:Name="radMinus" Content="expenditure ( - )" Tag="-" Checked="radMinus_Checked"/>
             </StackPanel>
-        </StackPanel>
 
-        <StackPanel x:Name="spDesc" Grid.Row="3" Orientation="Vertical"  Margin="0,10,0,0"
+            <StackPanel x:Name="type" Grid.Row="1" Orientation="Horizontal"  Margin="0,10,0,0"
                      HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="textBlock1" Text="describtion :" FontSize="18" Foreground="Yellow" 
+                <TextBlock Text="type :" FontSize="18" Foreground="Yellow" 
+                       FontFamily="Times New Roman" FontStyle="Italic" />
+                <StackPanel x:Name="spChooseType"  Margin="30,0,25,0">
+                    <RadioButton x:Name="radPlus" Content="income ( + )" Tag="+" Checked="radPlus_Checked" IsChecked="True"/>
+                    <RadioButton x:Name="radMinus" Content="expenditure ( - )" Tag="-" Checked="radMinus_Checked"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="spDesc" Grid.Row="2" Orientation="Vertical"  Margin="0,10,0,0"
+                     HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="textBlock1" Text="describtion :" FontSize="18" Foreground="Yellow" 
                        FontFamily="Times New Roman" FontStyle="Italic"/>
-            <TextBox x:Name="txtDescribe" Height="50" Width="235" HorizontalAlignment="Left"
+                <TextBox x:Name="txtDescribe" Height="50" Width="235" HorizontalAlignment="Left"
                      PlaceholderText="details ..." TextWrapping="Wrap" Margin="0,10,0,0"></TextBox>
-        </StackPanel>
+            </StackPanel>
 
-        <StackPanel x:Name="spTypeValue" Grid.Row="4" Orientation="Vertical"  Margin="0,10,0,0"
+            <StackPanel x:Name="spTypeValue" Grid.Row="3" Orientation="Vertical"  Margin="0,10,0,0"
                      HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="textBlock" Text="value :" FontSize="18" Foreground="Yellow" 
+                <TextBlock x:Name="textBlock" Text="value :" FontSize="18" Foreground="Yellow" 
                        FontFamily="Times New Roman" FontStyle="Italic"/>
-            <StackPanel x:Name="spChooseCurrency" Orientation="Horizontal">
-                <TextBox x:Name="txtValue" HorizontalAlignment="Left" Margin="0,10,0,0" Width="150"
+                <StackPanel x:Name="spChooseCurrency" Orientation="Horizontal">
+                    <TextBox x:Name="txtValue" HorizontalAlignment="Left" Margin="0,10,0,0" Width="150"
                           PlaceholderText="e.g.  12.34" Height="20"></TextBox>
-                <ComboBox x:Name="cmbChooseCurrency" Margin="5,10,0,0" Width="80" FontSize="13">
-                    <ComboBoxItem Tag="EUR(€)" Content="€ EUR" IsSelected="True"></ComboBoxItem>
-                    <ComboBoxItem Tag="USD($)" Content="$ USD"></ComboBoxItem>
-                    <ComboBoxItem Tag="GBP(￡)" Content="￡GBP"></ComboBoxItem>
-                    <ComboBoxItem Tag="RMB(¥)" Content="¥ RMB"></ComboBoxItem>
-                </ComboBox>
+                    <ComboBox x:Name="cmbChooseCurrency" Margin="5,10,0,0" Width="80" FontSize="13">
+                        <ComboBoxItem Tag="EUR(€)" Content="€ EUR" IsSelected="True"></ComboBoxItem>
+                        <ComboBoxItem Tag="USD($)" Content="$ USD"></ComboBoxItem>
+                        <ComboBoxItem Tag="GBP(￡)" Content="￡GBP"></ComboBoxItem>
+                        <ComboBoxItem Tag="RMB(¥)" Content="¥ RMB"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
 
-        <StackPanel x:Name="spLocation" Grid.Row="5" Orientation="Vertical"  Margin="0,10,0,0"
+            <StackPanel x:Name="spLocation" Grid.Row="4" Orientation="Vertical"  Margin="0,10,0,0"
                      HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="location :" FontSize="18" Foreground="Yellow" 
+                <TextBlock Text="location :" FontSize="18" Foreground="Yellow" 
                        FontFamily="Times New Roman" FontStyle="Italic" />
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="txtLocation" HorizontalAlignment="Left" Margin="0,10,0,0" Width="150"
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txtLocation" HorizontalAlignment="Left" Margin="0,10,0,0" Width="150"
                      PlaceholderText="city , country" Height="20"></TextBox>
-                <Button x:Name="btnGetLocation" Content="Get Loc" Margin="5,10,0,0"
+                    <Button x:Name="btnGetLocation" Content="Get Loc" Margin="5,10,0,0"
                      FontSize="14" Width="80" />
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Row="6" Orientation="Horizontal"
+        </Grid>
+        
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal"
                     HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnAddSubmit" Content="Submit" Width="80" Click="btnAddSubmit_Click"></Button>
             <Button x:Name="btnAddReset" Margin="60,0,0,0" Content="Reset" Width="80"
