@@ -65,7 +65,7 @@ namespace AccountBook
                     Icon = "\xE713",
                     Label = "Setting",
                     Selected = Visibility.Collapsed,
-                    DestPage = typeof(Page1)
+                    DestPage = typeof(setting)
                 }
             });
 

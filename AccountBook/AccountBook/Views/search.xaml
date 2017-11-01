@@ -31,7 +31,7 @@
         <StackPanel x:Name="spType" Grid.Row="1" Grid.Column="1">
             <TextBlock Text="type :" Margin="0,30,0,0" FontSize="18" Foreground="Yellow" 
                        FontFamily="Times New Roman" FontStyle="Italic"/>
-            <StackPanel x:Name="spSearchType" Margin="0,20,0,0" HorizontalAlignment="Center">
+            <StackPanel x:Name="spSearchType" Margin="40,20,0,0" >
                 <RadioButton x:Name="radSearchByMonth" Content="search by month" Tag="m" Checked="radSearchByMonth_Checked"
                              IsChecked="True"/>
                 <RadioButton x:Name="radSearchByYear" Content="search by year" Tag="y" Checked="radSearchByYear_Checked"/>
@@ -39,13 +39,18 @@
             </StackPanel>
         </StackPanel>
 
+        <Line Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center"
+              Stroke="LightGreen" X1="0" X2="1000"
+              StrokeThickness='2' />
+        
         <StackPanel x:Name="spItemValue" Grid.Row="2" Grid.Column="1">
-            <TextBlock Text="item :" FontSize="18" Foreground="Yellow" 
+            <TextBlock Text="item :" FontSize="18" Foreground="Yellow" Margin="0,10,0,0"
                        FontFamily="Times New Roman" FontStyle="Italic"></TextBlock>
             <StackPanel x:Name="spChooseByYear" Visibility="Visible" Margin="30,20,0,0" Orientation="Horizontal">
                 <TextBlock Text="year:" FontSize="18"></TextBlock>
                 <TextBox x:Name="txtSearchYear" Margin="40,0,0,0" Width="150" HorizontalAlignment="Left"/>
             </StackPanel>
+            
             <StackPanel x:Name="spChooseByMonth" Visibility="Visible" Margin="30,20,0,0" Orientation="Horizontal">
                 <TextBlock Text="month:" FontSize="18"></TextBlock>
                 <TextBox x:Name="txtSearchMonth" Margin="20,0,0,0" Width="150" HorizontalAlignment="Left"/>
