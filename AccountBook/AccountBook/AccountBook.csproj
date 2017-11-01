@@ -103,6 +103,9 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="NavMenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\addItem.xaml.cs">
+      <DependentUpon>addItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\addItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\home.xaml">
       <SubType>Designer</SubType>

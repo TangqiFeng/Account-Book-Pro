@@ -39,17 +39,17 @@ namespace AccountBook
                 new NavMenuItem()
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                    Icon = "\xE11A",
-                    Label = "Search",
+                    Icon = "\xE109",
+                    Label = "Add Item",
                     Selected = Visibility.Collapsed,
-                    DestPage = typeof(Page1)
+                    DestPage = typeof(addItem)
                 },
 
                 new NavMenuItem()
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                    Icon = "\xE109",
-                    Label = "Add Item",
+                    Icon = "\xE11A",
+                    Label = "Search",
                     Selected = Visibility.Collapsed,
                     DestPage = typeof(Page1)
                 }
