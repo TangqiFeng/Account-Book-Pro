@@ -46,7 +46,7 @@ namespace AccountBook.Views
 
             //Get User
             User user = new User();
-            user.username = txtUsername.Text;
+            user.username = txtMail.Text;
             user.password = txtPassword.Password;
 
             //Set uri
@@ -81,7 +81,7 @@ namespace AccountBook.Views
             }
             else if (httpResponseBody == "duplicate_user")
             {
-                msg = $"user exist.";
+                msg = $"email exist.";
                 await new MessageDialog(msg).ShowAsync();
             }
             else
