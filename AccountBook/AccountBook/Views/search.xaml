@@ -63,9 +63,10 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1"
                     HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnSearchSubmit" Content="Submit" Width="80" Click="btnSearchSubmit_Click"></Button>
+            <Button x:Name="btnSearchSubmit" Content="Submit" Width="80" Click="btnSearchSubmit_Click"
+                    Background="RoyalBlue"/>
             <Button x:Name="btnSearchReset" Margin="60,0,0,0" Content="Reset" Width="80"
-                    Click="btnSearchReset_Click"/>
+                    Click="btnSearchReset_Click" Background="RoyalBlue"/>
         </StackPanel>
     </Grid>
 </Page>
