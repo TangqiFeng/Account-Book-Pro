@@ -33,7 +33,7 @@ namespace AccountBook.Views
 
         private void tbToLog_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(login));
         }
 
         private async void btnSignup_Click(object sender, RoutedEventArgs e)
