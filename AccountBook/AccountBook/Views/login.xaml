@@ -37,6 +37,13 @@
                     Background="Orange" Opacity="0.8"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Width="200" Content="sign in" Margin="0,10,0,0"/>
+            <TextBlock RelativePanel.Below="btnLogin" 
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                    Width="200" Text="New User ?" Margin="0,20,0,0"/>
+            <TextBlock x:Name="tbToReg" Tapped="tbToReg_Tapped" Foreground="LightGreen"
+                RelativePanel.Below="btnLogin" RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                Width="200" Text="Register now !" Margin="0,20,0,0"/>
         </RelativePanel>
         
     </Grid>

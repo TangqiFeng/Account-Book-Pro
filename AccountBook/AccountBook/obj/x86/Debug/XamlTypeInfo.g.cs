@@ -132,21 +132,23 @@ namespace AccountBook.AccountBook_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "AccountBook.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "AccountBook.Views.login";
             _typeNameTable[4] = "AccountBook.Views.Page1";
             _typeNameTable[5] = "AccountBook.Views.Page2";
+            _typeNameTable[6] = "AccountBook.Views.register";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::AccountBook.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::AccountBook.Views.login);
             _typeTable[4] = typeof(global::AccountBook.Views.Page1);
             _typeTable[5] = typeof(global::AccountBook.Views.Page2);
+            _typeTable[6] = typeof(global::AccountBook.Views.register);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,6 +187,7 @@ namespace AccountBook.AccountBook_XamlTypeInfo
         private object Activate_3_login() { return new global::AccountBook.Views.login(); }
         private object Activate_4_Page1() { return new global::AccountBook.Views.Page1(); }
         private object Activate_5_Page2() { return new global::AccountBook.Views.Page2(); }
+        private object Activate_6_register() { return new global::AccountBook.Views.register(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -228,6 +231,13 @@ namespace AccountBook.AccountBook_XamlTypeInfo
             case 5:   //  AccountBook.Views.Page2
                 userType = new global::AccountBook.AccountBook_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_5_Page2;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  AccountBook.Views.register
+                userType = new global::AccountBook.AccountBook_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_register;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

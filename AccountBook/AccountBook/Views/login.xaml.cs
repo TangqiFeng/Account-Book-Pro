@@ -26,5 +26,6 @@ namespace AccountBook.Views
         {
             this.InitializeComponent();
         }
+        
     }
 }
