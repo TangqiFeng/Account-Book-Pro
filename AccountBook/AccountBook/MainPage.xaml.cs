@@ -31,16 +31,16 @@ namespace AccountBook
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
                     Icon = "\xE10F",
-                    Label = "Page 1",
+                    Label = "Home",
                     Selected = Visibility.Visible,
-                    DestPage = typeof(Page1)
+                    DestPage = typeof(home)
                 },
 
                 new NavMenuItem()
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
                     Icon = "\xE11A",
-                    Label = "Page 2",
+                    Label = "Search",
                     Selected = Visibility.Collapsed,
                     DestPage = typeof(Page1)
                 },
@@ -48,17 +48,8 @@ namespace AccountBook
                 new NavMenuItem()
                 {
                     FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                    Icon = "\xE121",
-                    Label = "Page 3",
-                    Selected = Visibility.Collapsed,
-                    DestPage = typeof(Page1)
-                },
-
-                new NavMenuItem()
-                {
-                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                    Icon = "\xE122",
-                    Label = "Page 4",
+                    Icon = "\xE109",
+                    Label = "Add Item",
                     Selected = Visibility.Collapsed,
                     DestPage = typeof(Page1)
                 }
@@ -93,7 +84,8 @@ namespace AccountBook
             NavMenuPrimaryListView.ItemClick += NavMenuListView_ItemClick;
             NavMenuSecondaryListView.ItemClick += NavMenuListView_ItemClick;
             // default page
-            RootFrame.SourcePageType = typeof(Page1);
+            RootFrame.SourcePageType = typeof(home);
+            RootSplitView.IsPaneOpen = false;
         }
 
         private void NavMenuListView_ItemClick(object sender, ItemClickEventArgs e)

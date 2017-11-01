@@ -20,11 +20,12 @@ namespace AccountBook.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page2 : Page
+    public sealed partial class home : Page
     {
-        public Page2()
+        public home()
         {
             this.InitializeComponent();
+            tbUserRmail.Text = Globals.userEmail;
         }
     }
 }
