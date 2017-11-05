@@ -1,14 +1,15 @@
 package com.kyle.demo.controllers;
 
+import com.kyle.demo.models.Item;
+import com.kyle.demo.userServices.ItemService;
 import com.kyle.demo.userServices.UserServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -18,6 +19,10 @@ public class MainController {
 	@Autowired
 	@Qualifier("LRImpl")
 	private UserServices userService;
+
+	@Autowired
+	@Qualifier("ItemImpl")
+	private ItemService itemService;
 
 	// Server console logger
 	private static Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -43,6 +48,36 @@ public class MainController {
 
 		return userService.loginUser(username,password);
 	} // end of /login end point
+
+	@PostMapping("/additem")
+	public String createItem(@RequestBody Item item) throws Exception {
+		return itemService.createItem(item);
+	}
+
+	@GetMapping("/getitembydate")
+	public List<Item> getItemByDate(@RequestParam("month") String month,
+									@RequestParam("year") String year,
+									@RequestParam("username") String username){
+		String date="";
+		if(month.equals("0")){
+			date = new String(year+"$");
+		}else {
+			date = new String(month+"/"+year+"$");
+		}
+
+		return itemService.getItemByDate(username,date);
+	}
+
+	@GetMapping("/getitembyloc")
+	public List<Item> getItemByLocation(@RequestParam("location") String loc,
+										@RequestParam("username") String username){
+		return itemService.getItemByLocation(username,loc);
+	}
+
+	@GetMapping("/getallitem")
+	public List<Item> getAll(@RequestParam("username") String username){
+		return itemService.showAll(username);
+	}
 
 
 } // end of class
