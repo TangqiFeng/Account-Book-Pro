@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://52.16.139.0:27017/UWP
+      uri: mongodb://34.208.248.220:27017/UWP

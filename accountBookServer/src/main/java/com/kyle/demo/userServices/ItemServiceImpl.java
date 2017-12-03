@@ -15,7 +15,7 @@ public class ItemServiceImpl implements ItemService {
 
     public String createItem(Item item) throws Exception {
         itemdao.save(item);
-        return null;
+        return "success";
     }
 
     public List<Item> getItemByDate(String username, String date) {

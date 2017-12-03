@@ -9,12 +9,12 @@ public class Item {
     private String username;
     private String detail;
     private String operate;
-    private double value;
+    private String value;
     private String currency;
     private String location;
     private String date;
 
-    public Item(String username, String detail, String operate, double value,
+    public Item(String username, String detail, String operate, String value,
                 String currency, String location, String date) {
         this.username = username;
         this.detail = detail;
@@ -52,11 +52,11 @@ public class Item {
         this.operate = operate;
     }
 
-    public double getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
