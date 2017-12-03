@@ -50,7 +50,7 @@ namespace AccountBook.Views
             user.password = txtPassword.Password;
 
             //Set uri
-            Uri requestUri = new Uri("http://54.246.215.224:8080/sign-up");
+            Uri requestUri = new Uri(App.URL + "/sign-up");
 
             //Set content
             var parameters = new Dictionary<string, string> { { "username", user.username }, { "password", user.password} };

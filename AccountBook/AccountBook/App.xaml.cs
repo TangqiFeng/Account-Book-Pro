@@ -23,6 +23,9 @@ namespace AccountBook
     /// </summary>
     sealed partial class App : Application
     {
+        // global const
+        public static String URL = "http://34.208.248.220:8080";
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().

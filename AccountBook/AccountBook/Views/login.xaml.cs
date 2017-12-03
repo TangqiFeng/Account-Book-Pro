@@ -49,7 +49,7 @@ namespace AccountBook.Views
             user.password = txtPassword.Password;
 
             //Set uri
-            Uri requestUri = new Uri("http://54.246.215.224:8080/login?username="+user.username+"&password="+user.password);
+            Uri requestUri = new Uri(App.URL+"/login?username="+user.username+"&password="+user.password);
             
             //Send the GET request asynchronously and retrieve the response as a string.
             Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
