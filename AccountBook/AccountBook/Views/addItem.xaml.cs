@@ -119,7 +119,7 @@ namespace AccountBook.Views
                 string currency = ((ComboBoxItem)cmbChooseCurrency.SelectedItem).Tag.ToString();
 
                 //get new item
-                var addItem = new Item() { user=Globals.userEmail, detail = des, operate = opt, value = value, location = loc, date = date, currency = currency };
+                var addItem = new Item() { username = Globals.userEmail, detail = des, operate = opt, value = value, location = loc, date = date, currency = currency };
 
                 //Create an HTTP client object
                 HttpClient httpClient = new HttpClient();
@@ -130,7 +130,7 @@ namespace AccountBook.Views
                 // create dynamic object that will store values for json
                 dynamic dynamicJson = new ExpandoObject();
                 // create dynamic object that representing json; add todo task data to it 
-                dynamicJson.username = addItem.user;
+                dynamicJson.username = addItem.username;
                 dynamicJson.detail = addItem.detail;
                 dynamicJson.operate = addItem.operate;
                 dynamicJson.value = Convert.ToString(addItem.value);

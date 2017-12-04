@@ -32,8 +32,7 @@
             <TextBlock Text="type :" Margin="0,30,0,0" FontSize="18" Foreground="Yellow" 
                        FontFamily="Times New Roman" FontStyle="Italic"/>
             <StackPanel x:Name="spSearchType" Margin="40,20,0,0" >
-                <RadioButton x:Name="radSearchByMonth" Content="search by month" Tag="m" Checked="radSearchByMonth_Checked"
-                             IsChecked="True"/>
+                <RadioButton x:Name="radSearchByMonth" Content="search by month" Tag="m" Checked="radSearchByMonth_Checked"/>
                 <RadioButton x:Name="radSearchByYear" Content="search by year" Tag="y" Checked="radSearchByYear_Checked"/>
                 <RadioButton x:Name="radSearchByLocation" Content="search by Location" Checked="radSearchByLocation_Checked"/>
             </StackPanel>
@@ -55,7 +54,7 @@
                 <TextBlock Text="month:" FontSize="18"></TextBlock>
                 <TextBox x:Name="txtSearchMonth" Margin="20,0,0,0" Width="150" HorizontalAlignment="Left"/>
             </StackPanel>
-            <StackPanel x:Name="spChooseByLocation" Visibility="Collapsed" Margin="30,20,0,0" Orientation="Horizontal">
+            <StackPanel x:Name="spChooseByLocation" Visibility="Visible" Margin="30,20,0,0" Orientation="Horizontal">
                 <TextBlock Text="location:" FontSize="18"></TextBlock>
                 <TextBox x:Name="txtSearchLocation" Margin="10,0,0,0" Width="150" HorizontalAlignment="Left"/>
             </StackPanel>

@@ -8,7 +8,7 @@ namespace AccountBook.Models
 {
     class Item
     {
-        public string user { get; set; }
+        public string username { get; set; }
         
         public string detail { get; set; }
         
@@ -25,7 +25,7 @@ namespace AccountBook.Models
         public Item() { }
 
         public Item(string user, string detail, string operate, double value, string currency, string location, string date) {
-            this.user = user;
+            this.username = user;
             this.detail = detail;
             this.operate = operate;
             this.value = value;
