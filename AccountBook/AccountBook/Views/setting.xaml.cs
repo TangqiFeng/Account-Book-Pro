@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,14 +28,17 @@ namespace AccountBook.Views
             this.InitializeComponent();
         }
 
-        private void btnChangePsd_Click(object sender, RoutedEventArgs e)
+        private async void btnChangePsd_Click(object sender, RoutedEventArgs e)
         {
-
+            var msg = $"Sorry, this function is not avaliable now.";
+            await new MessageDialog(msg).ShowAsync();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            Globals.userEmail = "";
+            //this.Frame.Navigate(typeof(login));
+            App.Current.Exit();
         }
     }
 }
