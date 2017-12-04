@@ -67,6 +67,9 @@ namespace AccountBook.Views
 
         private async void btnSearchSubmit_Click(object sender, RoutedEventArgs e)
         {
+            //clear itemList
+            itemList.Clear();
+
             String year = txtSearchYear.Text;
             String month = txtSearchMonth.Text;
             String location = txtSearchLocation.Text;
@@ -105,8 +108,8 @@ namespace AccountBook.Views
                     await dialog.ShowAsync();
                 };
 
-                var msg = $" ." + temp;
-                await new MessageDialog(msg).ShowAsync();
+                //var msg = $" ." + temp;
+                //await new MessageDialog(msg).ShowAsync();
             }
             catch (Exception ex)
             {
@@ -161,6 +164,9 @@ namespace AccountBook.Views
                 itemList.Add(_item);
 
             } // end foreach (var item in array)
+            Globals.items = itemList;
+            this.Frame.Navigate(typeof(result));
+            
         }
 
         private void btnSearchReset_Click(object sender, RoutedEventArgs e)

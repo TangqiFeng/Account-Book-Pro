@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountBook.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,9 @@ namespace AccountBook
     class Globals
     {
         public static String userEmail = ""; // Modifiable
+        public static List<Item> items;
+        public static void clearItem() {
+            items.Clear();
+        }
     }
 }
