@@ -72,7 +72,7 @@ namespace AccountBook.Views
             {
                 msg = $"login success.";
                 await new MessageDialog(msg).ShowAsync();
-                //set global userEmail 
+                //set global userEmail and user
                 Globals.userEmail = user.username;
                 this.Frame.Navigate(typeof(MainPage));
             }
