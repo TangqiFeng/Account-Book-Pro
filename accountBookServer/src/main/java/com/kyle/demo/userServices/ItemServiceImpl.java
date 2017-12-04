@@ -32,4 +32,10 @@ public class ItemServiceImpl implements ItemService {
         List<Item> items = itemdao.findByUsername(username);
         return items;
     }
+
+    @Override
+    public List<Item> findByUsernameAndDetail(String username, String detail) {
+        List<Item> items = itemdao.findByUsernameAndDetail(username, detail);
+        return items;
+    }
 }

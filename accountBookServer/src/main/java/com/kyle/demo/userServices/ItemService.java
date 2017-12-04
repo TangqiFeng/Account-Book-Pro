@@ -9,4 +9,5 @@ public interface ItemService {
     public List<Item> getItemByDate(String username, String date);
     public List<Item> getItemByLocation(String username, String loc);
     public List<Item> showAll(String username);
+    public List<Item> findByUsernameAndDetail(String username, String detail);
 }

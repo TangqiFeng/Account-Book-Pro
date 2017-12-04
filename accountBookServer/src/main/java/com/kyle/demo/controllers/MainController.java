@@ -1,6 +1,7 @@
 package com.kyle.demo.controllers;
 
 import com.kyle.demo.models.Item;
+import com.kyle.demo.repositories.ItemDAO;
 import com.kyle.demo.userServices.ItemService;
 import com.kyle.demo.userServices.UserServices;
 import org.slf4j.Logger;
@@ -23,6 +24,9 @@ public class MainController {
 	@Autowired
 	@Qualifier("ItemImpl")
 	private ItemService itemService;
+
+	@Autowired
+	private ItemDAO itemDao;
 
 	// Server console logger
 	private static Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -77,6 +81,16 @@ public class MainController {
 	@GetMapping("/getallitem")
 	public List<Item> getAll(@RequestParam("username") String username){
 		return itemService.showAll(username);
+	}
+
+	@GetMapping("/deleteitem")
+	public String delete(@RequestParam("username") String username,
+							 @RequestParam("detail") String detail){
+		List<Item> items = itemService.findByUsernameAndDetail(username, detail);
+		for (Item item : items){
+			itemDao.delete(item);
+		}
+		return "deleted";
 	}
 
 

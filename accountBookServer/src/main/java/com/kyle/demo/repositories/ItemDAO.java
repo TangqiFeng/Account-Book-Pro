@@ -15,4 +15,7 @@ public interface ItemDAO extends MongoRepository<Item, String> {
     @Query("{'$and' : [{'username' : ?0},{'location' : ?1}]}")
     public ArrayList<Item> findByUsernameAndLocation(String username, String loc);
 
+    @Query("{'$and' : [{'username' : ?0},{'detail' : ?1}]}")
+    public ArrayList<Item> findByUsernameAndDetail(String username, String detail);
+
 }
