@@ -19,13 +19,19 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="HISTORY" FontSize="25" FontStyle="Italic"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="HISTORY" FontSize="25" FontStyle="Italic"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <StackPanel x:Name="spHistory" Grid.Row="1" Visibility="Visible" Orientation="Vertical">
+        <StackPanel x:Name="spHistory" Grid.Column="1" Grid.Row="1" Visibility="Visible" Orientation="Vertical">
             <StackPanel>
-                <ScrollViewer x:Name="scrollViewer" Width="350" Height="300" Margin="20,20,0,0" HorizontalAlignment="Left">
-                    <GridView ItemsSource="{x:Bind Organization.Item, Mode=OneWay}"  
+                <ScrollViewer x:Name="scrollViewer" Width="330" Height="270" HorizontalAlignment="Left">
+                    <GridView ItemsSource="{x:Bind Organization.Item, Mode=OneWay}"
                               SelectedIndex="{x:Bind Organization.SelectedIndex, Mode=TwoWay}"
                               IsItemClickEnabled="True" x:Name="grvSelectItem">
                         <GridView.ItemsPanel>
@@ -55,8 +61,8 @@
                                     <TextBlock Grid.Column="0" Grid.Row="3" Text="{x:Bind currency, Mode=OneWay}" HorizontalAlignment="Right"/>
                                     <TextBlock Grid.Column="1" Grid.Row="3" Text="{x:Bind operate, Mode=OneWay}" HorizontalAlignment="Right"/>
                                     <TextBlock Grid.Column="2" Grid.Row="3" Text="{x:Bind value, Mode=OneWay}" HorizontalAlignment="Left"/>
-                                    <TextBlock Text="delete"  Grid.Column="3" Grid.RowSpan="3"
-                                         Grid.Row="1" VerticalAlignment="Center" Foreground="Orange" ></TextBlock>
+                                    <!--<Button Content="Delete"  Grid.Column="3" Grid.RowSpan="3" Click="{x:Bind  Organization.Delete}"
+                                         Grid.Row="1" VerticalAlignment="Center" Foreground="Orange" ></Button>-->
                                     <Border Background="Blue" Grid.Row="0" Grid.ColumnSpan="4">
                                         <TextBlock ></TextBlock>
                                     </Border>
@@ -70,12 +76,12 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel x:Name="spTotal" Grid.Row="2" Visibility="Visible" Margin="0,15,0,0">
+        <StackPanel x:Name="spTotal" Grid.Column="1" Grid.Row="2" Visibility="Visible" Margin="0,15,0,0">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="total :" Margin="40,10,0,0" FontSize="18" Foreground="GreenYellow" 
+                <TextBlock Text="total :" Margin="20,10,0,0" FontSize="18" Foreground="GreenYellow" 
                        FontFamily="Times New Roman" FontStyle="Italic"></TextBlock>
-                <TextBlock x:Name="txtCalculate" Text="calculate" Margin="40,10,0,0" FontSize="18" Foreground="Orange" 
-                       FontFamily="Times New Roman"  FontStyle="Italic" ></TextBlock>
+                <Button x:Name="txtCalculate" Content="calculate" Margin="40,10,0,0" FontSize="18" Foreground="Orange" 
+                       FontFamily="Times New Roman"  FontStyle="Italic" Click="txtCalculate_Click" ></Button>
             </StackPanel>
             <StackPanel x:Name="spTotalValue" Orientation="Horizontal">
                 <StackPanel>

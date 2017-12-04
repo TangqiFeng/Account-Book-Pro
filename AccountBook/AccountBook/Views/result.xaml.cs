@@ -1,4 +1,5 @@
-﻿using AccountBook.ViewModels;
+﻿using AccountBook.Models;
+using AccountBook.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +32,73 @@ namespace AccountBook.Views
 
         OrganizationViewModel Organization { get; set; }
 
+        private void txtCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            List<ItemViewModel> items = Organization.Item.ToList<ItemViewModel>();
+            int length = items.Count;
+            double sumEURO = 0;
+            double sumUSD = 0;
+            double sumGBP = 0;
+            double sumRMB = 0;
 
+
+            for (int i = 0; i < length; i++)
+            {
+                string curr = items[i].currency;
+                double value = items[i].value;
+                string operate = items[i].operate;
+                if (curr.Equals("EUR(€)"))
+                {
+                    if (operate.Equals("+"))
+                    {
+                        sumEURO += value;
+                    }
+                    if (operate.Equals("-"))
+                    {
+                        sumEURO -= value;
+                    }
+                }
+                if (curr.Equals("USD($)"))
+                {
+                    if (operate.Equals("+"))
+                    {
+                        sumUSD += value;
+                    }
+                    if (operate.Equals("-"))
+                    {
+                        sumUSD -= value;
+                    }
+                }
+                if (curr.Equals("GBP(￡)"))
+                {
+                    if (operate.Equals("+"))
+                    {
+                        sumGBP += value;
+                    }
+                    if (operate.Equals("-"))
+                    {
+                        sumGBP -= value;
+                    }
+                }
+                if (curr.Equals("RMB(¥)"))
+                {
+                    if (operate.Equals("+"))
+                    {
+                        sumRMB += value;
+                    }
+                    if (operate.Equals("-"))
+                    {
+                        sumRMB -= value;
+                    }
+                }
+            }
+
+
+            resultEURO.Text = sumEURO + "";
+            resultGBP.Text = sumGBP + "";
+            resultRMB.Text = sumRMB + "";
+            resultUSD.Text = sumUSD + "";
+
+        }
     }
 }

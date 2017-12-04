@@ -65,9 +65,9 @@ namespace AccountBook.ViewModels
         {
             if (SelectedIndex != -1)
             {
-                var dog = Item[SelectedIndex];
+                var item = Item[SelectedIndex];
                 Item.RemoveAt(SelectedIndex);
-                organization.Delete(dog);
+                organization.Delete(item);
             }
         }
 
