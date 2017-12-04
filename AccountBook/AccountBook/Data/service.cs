@@ -28,9 +28,43 @@ namespace AccountBook.Data
             Debug.WriteLine("INSERT person with name " + item.detail);
         }
 
-        public static void Delete(Item item)
+        public static async void Delete(Item item)
         {
-            Debug.WriteLine("DELETE person with name " + item.detail);
+            //Create an HTTP client object
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+
+            //Get username and detail
+            string username = item.username;
+            string detail = item.detail;
+
+            //Set uri
+            Uri requestUri = new Uri(App.URL + "/deleteitem?username=" + username + "&detail=" + detail);
+
+            //Send the GET request asynchronously and retrieve the response as a string.
+            Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
+            string httpResponseBody = "";
+
+            try
+            {
+                //Send the GET request
+                httpResponse = await httpClient.GetAsync(requestUri);
+                httpResponse.EnsureSuccessStatusCode();
+                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
+            }
+
+            string msg;
+            if (httpResponseBody == "deleted")
+            {
+               
+            }
+            else
+            {
+               
+            }
         }
 
     }
