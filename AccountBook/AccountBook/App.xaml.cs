@@ -24,7 +24,7 @@ namespace AccountBook
     sealed partial class App : Application
     {
         // global const
-        public static String URL = "http://34.208.248.220:8080";
+        public static String URL = "http://35.167.106.118:8080";
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
